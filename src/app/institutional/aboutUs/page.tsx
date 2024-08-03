@@ -11,10 +11,6 @@ export default function AboutUsPage() {
       <div className="container my-4 md:my-8 mx-auto px-2">
         <Title>{t('title')}</Title>
         <MultilineText>{t('description')}</MultilineText>
-        <h2 className="text-md font-bold py-2 mt-2 md:text-lg">
-          {t('content.title')}
-        </h2>
-        <MultilineText>{t('content.description')}</MultilineText>
       </div>
     </MainTheme>
   );

@@ -10,6 +10,10 @@
             "title": "Nossas redes sociais:"
         }
     },
+    "aboutUs": {
+        "title": "Sobre nós",
+        "description": "Memorizou é a solução perfeita para estudantes que buscam uma maneira eficiente de aprender. Com temas selecionados cuidadosamente, os usuários terão acesso a todo o conteúdo relevante para se preparar para seus exames. Além disso, o aplicativo permite que o usuário crie seus próprios flashcards, de forma a personalizar sua jornada de aprendizado.|Mas ainda há mais: a aplicação utiliza tecnologia avançada para criar sessões de estudo customizadas para cada usuário. A partir do desempenho individual e dos objetivos de aprendizado, a aplicação cria uma programação de estudo única e eficiente.|Com sua interface intuitiva e interativa, Memorizou torna o estudo mais divertido e engajador. E com a possibilidade de estudar em qualquer lugar e a qualquer momento, o usuário pode se preparar para seus exames sem se preocupar com limitações de tempo ou lugar.|Em resumo, se você busca uma forma eficiente e personalizada de se preparar para seus vestibulares ou concursos, o aplicativo de flashcards é a escolha certa.|| Comece sua jornada de aprendizado agora mesmo!"
+    },
     "footer": {},
     "header": {}
 }
