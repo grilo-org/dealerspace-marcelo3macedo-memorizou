@@ -1,0 +1,31 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Notebook {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  deletedAt DateTime? @db.Timestamp(6)
+  sections  Section[]
+
+  @@index([deletedAt])
+}
+
+model Section {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  notebookId  String
+  notebook    Notebook @relation(fields: [notebookId], references: [id])
+  createdAt DateTime @default(now())
+  deletedAt DateTime? @db.Timestamp(6)
+  
+  @@index([notebookId])
+}
