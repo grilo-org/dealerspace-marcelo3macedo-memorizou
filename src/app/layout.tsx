@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { AR_One_Sans } from "next/font/google";
 import "./globals.css";
+import messages from '../../messages/pt.json';
+import { NextIntlClientProvider } from "next-intl";
 
-const inter = Inter({ subsets: ["latin"] });
+const ar_one_sans = AR_One_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <html lang="pt-BR">
+        <body className={ar_one_sans.className}>{children}</body>
+      </html>
+    </NextIntlClientProvider>
   );
 }
