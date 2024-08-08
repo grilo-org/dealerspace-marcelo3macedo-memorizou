@@ -1,17 +1,20 @@
-import prisma from '@/lib/prisma';
-import { createNotebookSchema } from '@/schemas/notebooks';
-import { handleError } from '@/utils/errorHandler';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import prisma from "@/lib/prisma";
+import { createNotebookSchema } from "@/schemas/notebooks";
+import { handleError } from "@/utils/errorHandler";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   try {
     const data = createNotebookSchema.parse(req.body);
     const newRecord = await prisma.notebook.create({
-      data
-    })
+      data,
+    });
 
     res.status(201).json(newRecord);
   } catch (error) {
-    handleError(error, res)
+    handleError(error, res);
   }
 }

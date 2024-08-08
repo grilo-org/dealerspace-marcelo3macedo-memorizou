@@ -1,6 +1,6 @@
-import HeaderNavigation from '@/components/navigation/header';
-import { MainProps } from './props/main';
-import FooterNavigation from '@/components/navigation/footer';
+import HeaderNavigation from "@/components/navigation/header";
+import { MainProps } from "./props/main";
+import FooterNavigation from "@/components/navigation/footer";
 
 function MainTheme({ children }: Readonly<MainProps>) {
   return (
