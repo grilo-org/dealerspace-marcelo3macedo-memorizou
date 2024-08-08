@@ -1,19 +1,9 @@
-import { list } from "@/api/notebooks";
 import CreateNotebookForm from "@/components/forms/createNotebook";
 import MainTheme from "@/themes/main.theme";
-import { parseQueryParams } from "@/utils/fetch";
 import { useTranslations } from "next-intl";
-import { ParsedUrlQuery } from "querystring";
-import { use } from "react";
 
-export default function CreateNotebookPage({
-  searchParams,
-}: {
-  readonly searchParams: ParsedUrlQuery;
-}) {
+export default function CreateNotebookPage() {
   const t = useTranslations("notebooks");
-  const { page: pageNum, limit: limitNum } = parseQueryParams(searchParams);
-  const data = use(list(pageNum, limitNum));
 
   return (
     <MainTheme>
