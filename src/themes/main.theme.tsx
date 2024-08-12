@@ -1,14 +1,13 @@
-import HeaderNavigation from "@/components/navigation/header";
 import { MainProps } from "./props/main";
-import FooterNavigation from "@/components/navigation/footer";
+
+import SidebarNavigation from "@/components/navigation/sidebar";
 
 function MainTheme({ children }: Readonly<MainProps>) {
   return (
     <div className="w-full bg-yellow-50">
-      <div className="mx-auto">
-        <HeaderNavigation />
-        <main className="min-h-screen">{children}</main>
-        <FooterNavigation />
+      <div className="mx-auto flex">
+        <SidebarNavigation />
+        <main className="min-h-screen px-4">{children}</main>
       </div>
     </div>
   );
