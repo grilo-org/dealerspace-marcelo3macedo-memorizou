@@ -1,5 +1,6 @@
 import prisma from "@/lib/prisma";
 import { handleError } from "@/utils/errorHandler";
+
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -17,6 +18,12 @@ export default async function handler(
     const notebooks = await prisma.notebook.findMany({
       where: {
         deletedAt: null,
+      },
+      select: {
+        id: true,
+        title: true,
+        content: true,
+        createdAt: true,
       },
       skip,
       take,

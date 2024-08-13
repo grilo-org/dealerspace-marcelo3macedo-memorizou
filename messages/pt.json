@@ -53,5 +53,16 @@
             "title": "Contate-nos",
             "description": "Entre com contato conosco para críticas, melhorias e elogios."
         }
+    },
+    "notebooks": {
+        "title": "Cadernos disponíveis",
+        "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
+        "createdWhen": "criado",
+        "actions": {
+            "study": "Estudar",
+            "share": "Compartilhar",
+            "edit": "Editar",
+            "remove": "Remover"
+        }
     }
 }

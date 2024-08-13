@@ -1,28 +1,47 @@
-"use client";
-import { IItemProps } from "@/components/navigation/helpers/props/items";
-import { useState } from "react";
+import { FolderPlusIcon, HomeIcon, PhotoIcon } from "@heroicons/react/24/solid";
+
+import { ItemSidebarProps } from "@/components/navigation/helpers/props/item";
+import { Notebook } from "@/interfaces/notebook";
 
 const useHeaderNavigation = () => {
-  const [menuSelected, setMenuSelected] = useState("");
   const items = [
     {
-      href: "/",
-      title: "Início",
+      Icon: HomeIcon,
+      label: "Início",
+      link: "/",
     },
     {
-      href: "/para-professores",
-      title: "Para professores",
+      Icon: FolderPlusIcon,
+      label: "Criar caderno",
+      link: "/notebooks/create",
     },
     {
-      href: "/para-alunos",
-      title: "Para alunos",
+      Icon: PhotoIcon,
+      label: "Galeria",
+      link: "/notebooks/list",
     },
-  ] as IItemProps[];
+  ] as ItemSidebarProps[];
+  const notebooks = [
+    {
+      id: "1",
+      title: "test",
+      content: "teste",
+    },
+    {
+      id: "2",
+      title: "test",
+      content: "teste",
+    },
+    {
+      id: "3",
+      title: "test",
+      content: "teste",
+    },
+  ] as Notebook[];
 
   return {
+    notebooks,
     items,
-    menuSelected,
-    setMenuSelected,
   };
 };
 
