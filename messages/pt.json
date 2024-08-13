@@ -29,6 +29,29 @@
     "footer": {},
     "header": {
         "hello": "Olá",
-        "points": "pontos"
+        "points": "pontos",
+        "menu": {
+            "settings": "Configurações",
+            "recents": "Recentes",
+            "daysStrike": "Dias",
+            "studies": "Estudos",
+            "cardsViewed": "Cartões Vistos"
+        }
+    },
+    "configs": {
+        "title": "Configurações",
+        "description": "Informações importantes sobre a empresa e a forma como ela interage com seus clientes.",
+        "aboutUs": {
+            "title": "Sobre nós",
+            "description": "Conheça mais sobre nosso time e nossos valores"
+        },
+        "privacyPolicy": {
+            "title": "Politicas de Privacidade",
+            "description": "Confira os esforços que fazemos para preservar sua privacidade"
+        },
+        "contactUs": {
+            "title": "Contate-nos",
+            "description": "Entre com contato conosco para críticas, melhorias e elogios."
+        }
     }
 }
