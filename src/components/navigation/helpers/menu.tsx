@@ -1,7 +1,9 @@
-import { Bars3Icon } from '@heroicons/react/24/outline';
-import { XMarkIcon } from '@heroicons/react/24/solid';
-import { IMenuHelperProps } from './props/menu';
-import { hasMenuSelected, menuIconHandler } from '@/helpers/navigation/header';
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+
+import { IMenuHelperProps } from "./props/menu";
+
+import { hasMenuSelected, menuIconHandler } from "@/helpers/navigation/header";
 
 export default function MenuHelper({
   menuSelected,

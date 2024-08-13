@@ -7,6 +7,7 @@ export interface Notebook {
   id: string;
   title: string;
   content: string;
+  createdAt: string;
 }
 
 export interface NotebookResponse {
@@ -15,3 +16,7 @@ export interface NotebookResponse {
   limit: number;
   total: number;
 }
+
+export type NotebookIndexProps = {
+  params: { id: string };
+};

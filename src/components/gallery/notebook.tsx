@@ -1,25 +1,31 @@
-import { Notebook } from "@/interfaces/notebook";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { Notebook } from "@/interfaces/notebook";
+import { getDistanceToDate } from "@/utils/dateParser";
 
 export default function NotebookContent({
   notebook,
 }: {
   readonly notebook: Notebook;
 }) {
-  return (
-    <Link
-      key={notebook.title}
-      href={notebook.id}
-      className="mb-12 lg:mb-0 overflow-hidden rounded-md relative"
-    >
-      <div className="relative z-20 max-w-lg p-6 mx-auto bg-white rounded-md shadow ">
-        <h2 className="font-semibold text-gray-800 hover:underline md:text-xl">
-          {notebook.title}
-        </h2>
+  const t = useTranslations("notebooks");
 
-        <p className="mt-3 text-sm h-10 overflow-hidden text-gray-500">
-          {notebook.content}
+  return (
+    <Link href={`/notebooks/index/${notebook.id}`}>
+      <div className="w-full px-8 py-4 bg-white rounded-lg shadow-md">
+        <p className="text-xl font-bold text-gray-700 hover:text-gray-600 hover:underline">
+          {notebook.title}
         </p>
+        <p className="mt-2 text-gray-600">{notebook.content}</p>
+        <div className="flex items-center justify-between mt-4">
+          <span className="text-sm font-light text-gray-600">
+            {t("createdWhen")} {getDistanceToDate(notebook.createdAt)}
+          </span>
+          <p className="px-3 py-1 text-xs font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+            Categoria
+          </p>
+        </div>
       </div>
     </Link>
   );

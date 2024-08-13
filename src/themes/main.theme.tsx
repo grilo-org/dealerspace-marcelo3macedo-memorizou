@@ -7,7 +7,7 @@ function MainTheme({ children }: Readonly<MainProps>) {
     <div className="w-full bg-yellow-50">
       <div className="mx-auto flex">
         <SidebarNavigation />
-        <main className="min-h-screen px-4">{children}</main>
+        <main className="min-h-screen px-4 w-full">{children}</main>
       </div>
     </div>
   );

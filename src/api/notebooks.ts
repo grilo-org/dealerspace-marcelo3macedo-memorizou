@@ -1,6 +1,15 @@
 import { NewNotebook } from "@/interfaces/notebook";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+export async function index(id: string) {
+  const response = await fetch(`${apiUrl}/api/notebooks/index/${id}`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return response.json();
+}
+
 export async function list(page: number, limit: number) {
   const response = await fetch(
     `${apiUrl}/api/notebooks?page=${page}&limit=${limit}`,
