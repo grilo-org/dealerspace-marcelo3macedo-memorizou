@@ -1,9 +1,10 @@
 "use client";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useTranslations } from "next-intl";
+
 import { useCreateNotebook } from "@/hooks/notebooks/create";
 import { createNotebookSchema } from "@/schemas/notebooks";
 import { validate } from "@/utils/formValidate";
-import { Field, Form, Formik } from "formik";
-import { useTranslations } from "next-intl";
 
 export default function CreateNotebookForm() {
   const t = useTranslations("forms.notebook");
@@ -32,6 +33,11 @@ export default function CreateNotebookForm() {
                 placeholder={t("titlePlaceholder")}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
               />
+              <ErrorMessage
+                name="title"
+                component="div"
+                className="text-red-600 mt-2"
+              />
             </div>
 
             <div>
@@ -41,6 +47,11 @@ export default function CreateNotebookForm() {
                 name="content"
                 placeholder={t("contentPlaceholder")}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              />
+              <ErrorMessage
+                name="content"
+                component="div"
+                className="text-red-600 mt-2"
               />
             </div>
           </div>

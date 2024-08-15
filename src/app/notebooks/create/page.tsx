@@ -1,6 +1,7 @@
+import { useTranslations } from "next-intl";
+
 import CreateNotebookForm from "@/components/forms/createNotebook";
 import MainTheme from "@/themes/main.theme";
-import { useTranslations } from "next-intl";
 
 export default function CreateNotebookPage() {
   const t = useTranslations("notebooks");
