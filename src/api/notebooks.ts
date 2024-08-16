@@ -1,4 +1,4 @@
-import { NewNotebook } from "@/interfaces/notebook";
+import { EditNotebook, NewNotebook } from "@/interfaces/notebook";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -23,6 +23,21 @@ export async function list(page: number, limit: number) {
 export async function create(data: NewNotebook) {
   const response = await fetch(`${apiUrl}/api/notebooks/create`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to post data");
+  }
+  return response.json();
+}
+
+export async function update(data: EditNotebook) {
+  const response = await fetch(`${apiUrl}/api/notebooks/edit/${data.id}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
