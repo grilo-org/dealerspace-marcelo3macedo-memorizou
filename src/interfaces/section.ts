@@ -4,6 +4,9 @@ export interface Section {
   id: string;
   title: string;
   cards: Card[];
+  _count?: {
+    cards: number;
+  };
 }
 
 export interface NewSection {

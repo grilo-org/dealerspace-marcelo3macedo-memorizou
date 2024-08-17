@@ -27,6 +27,15 @@ export default async function handler(
           where: {
             deletedAt: null,
           },
+          select: {
+            id: true,
+            title: true,
+            _count: {
+              select: {
+                cards: true,
+              },
+            },
+          },
         },
       },
     });

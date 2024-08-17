@@ -95,6 +95,7 @@
     "sections": {
         "title": "Seções",
         "addNew": "Adicionar nova seção",
+        "availableCards": "cartões disponíveis",
         "modal": {
             "new": {
                 "title": "Nova seção"
