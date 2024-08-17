@@ -1,5 +1,13 @@
 {
+    "signIn": {
+        "title": "Bem-vindo ao Memorizou",
+        "description": "Memorizou é a solução perfeita para estudantes que buscam uma maneira eficiente de aprender."
+    },
     "forms": {
+        "signIn": {
+            "email": "E-mail",
+            "password": "Senha"
+        },
         "notebook": {
             "header": "Novo Caderno",
             "title": "Título",
@@ -24,7 +32,8 @@
         "actions": {
             "save": "Salvar",
             "cancel": "Cancelar",
-            "add": "Adicionar"
+            "add": "Adicionar",
+            "login": "Login"
         }
     },
     "privacyPolicy": {
