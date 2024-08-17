@@ -23,7 +23,20 @@ export default async function handler(
         title: true,
         content: true,
         createdAt: true,
-        sections: true,
+        sections: {
+          where: {
+            deletedAt: null,
+          },
+          select: {
+            id: true,
+            title: true,
+            _count: {
+              select: {
+                cards: true,
+              },
+            },
+          },
+        },
       },
     });
 

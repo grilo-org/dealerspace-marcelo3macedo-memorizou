@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import useProfile from '@/store/useProfile';
+import useProfile from "@/store/useProfile";
 
 const useProfileNavigation = () => {
   const { name, points, avatar, setName, setAvatar } = useProfile(
@@ -10,7 +10,7 @@ const useProfileNavigation = () => {
       avatar: state.avatar,
       setName: state.setName,
       setAvatar: state.setAvatar,
-    })
+    }),
   );
 
   return {
