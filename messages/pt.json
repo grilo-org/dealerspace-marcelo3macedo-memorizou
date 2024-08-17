@@ -8,6 +8,12 @@
             "email": "E-mail",
             "password": "Senha"
         },
+        "signUp": {
+            "name": "Nome",
+            "email": "E-mail",
+            "password": "Senha",
+            "confirmPassword": "Confirme sua Senha"
+        },
         "notebook": {
             "header": "Novo Caderno",
             "title": "Título",
@@ -33,7 +39,8 @@
             "save": "Salvar",
             "cancel": "Cancelar",
             "add": "Adicionar",
-            "login": "Login"
+            "login": "Login",
+            "create": "Criar"
         }
     },
     "privacyPolicy": {
