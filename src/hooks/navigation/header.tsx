@@ -12,12 +12,12 @@ const useHeaderNavigation = () => {
     },
     {
       Icon: FolderPlusIcon,
-      label: "Criar caderno",
+      label: "Meus cadernos",
       link: "/notebooks/create",
     },
     {
       Icon: PhotoIcon,
-      label: "Galeria",
+      label: "Galeria Pública",
       link: "/notebooks/list",
     },
   ] as ItemSidebarProps[];
