@@ -7,8 +7,24 @@
             "content": "Conteúdo",
             "contentPlaceholder": "Informe uma descrição ao caderno"
         },
+        "sections": {
+            "header": "Nova Seção",
+            "title": "Título",
+            "titlePlaceholder": "Informe o título da seção",
+            "content": "Conteúdo",
+            "contentPlaceholder": "Informe uma descrição ao caderno"
+        },
+        "cards": {
+            "header": "Novo cartão",
+            "title": "Título",
+            "titlePlaceholder": "Informe o título do cartão",
+            "content": "Conteúdo",
+            "contentPlaceholder": "Informe uma descrição ao cartão"
+        },
         "actions": {
-            "save": "Salvar"
+            "save": "Salvar",
+            "cancel": "Cancelar",
+            "add": "Adicionar"
         }
     },
     "privacyPolicy": {
@@ -58,11 +74,43 @@
         "title": "Cadernos disponíveis",
         "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
         "createdWhen": "criado",
+        "modal": {
+            "edit": {
+                "title": "Editar Caderno"
+            },
+            "remove": {
+                "title": "Remover Caderno",
+                "confirm": "Você deseja realmente deletar esse caderno?"
+            }
+        },
         "actions": {
             "study": "Estudar",
             "share": "Compartilhar",
             "edit": "Editar",
-            "remove": "Remover"
+            "remove": "Remover",
+            "save": "Salvar",
+            "cancel": "Cancelar"
+        }
+    },
+    "sections": {
+        "title": "Seções",
+        "addNew": "Adicionar nova seção",
+        "modal": {
+            "new": {
+                "title": "Nova seção"
+            }
+        }
+    },
+    "cards": {
+        "title": "Cartões",
+        "section": "Sessão",
+        "addNew": "Adicionar novo cartão",
+        "front": "Frente",
+        "back": "Verso",
+        "modal": {
+            "new": {
+                "title": "Novo cartão"
+            }
         }
     }
 }

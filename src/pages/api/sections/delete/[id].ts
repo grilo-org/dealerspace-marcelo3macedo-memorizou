@@ -1,18 +1,22 @@
-import prisma from '@/lib/prisma';
-import { handleError } from '@/utils/errorHandler';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import prisma from "@/lib/prisma";
+import { handleError } from "@/utils/errorHandler";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+import type { NextApiRequest, NextApiResponse } from "next";
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   const { id } = req.query;
 
-  if (req.method !== 'DELETE' || !id) {
-    return res.status(405).json({ error: 'Invalid Request' });
+  if (req.method !== "DELETE" || !id) {
+    return res.status(405).json({ error: "Invalid Request" });
   }
 
   try {
     const deleted = await prisma.section.update({
       where: {
-        id: id.toString()
+        id: id.toString(),
       },
       data: {
         deletedAt: new Date(),
@@ -21,6 +25,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json(deleted);
   } catch (error) {
-    handleError(error, res)
+    handleError(error, res);
   }
 }

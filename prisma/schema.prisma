@@ -24,8 +24,22 @@ model Section {
   description String
   notebookId  String
   notebook    Notebook @relation(fields: [notebookId], references: [id])
-  createdAt DateTime @default(now())
-  deletedAt DateTime? @db.Timestamp(6)
+  createdAt   DateTime @default(now())
+  deletedAt   DateTime? @db.Timestamp(6)
+  cards       Card[]
   
   @@index([notebookId])
+}
+
+model Card {
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  extra       String?
+  sectionId   String
+  section     Section @relation(fields: [sectionId], references: [id])
+  createdAt   DateTime @default(now())
+  deletedAt   DateTime? @db.Timestamp(6)
+
+  @@index([sectionId])
 }

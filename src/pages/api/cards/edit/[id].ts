@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { editCardSchema } from "@/schemas/cards";
 import { handleError } from "@/utils/errorHandler";
 
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -7,31 +8,22 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const { id } = req.query;
-
   try {
+    const { id } = req.query;
+    const data = editCardSchema.parse(req.body);
+
     if (!id) {
       throw new Error("Invalid request");
     }
 
-    const notebook = await prisma.notebook.findFirst({
+    const updatedRecord = await prisma.card.update({
       where: {
         id: id.toString(),
       },
-      select: {
-        id: true,
-        title: true,
-        content: true,
-        createdAt: true,
-        sections: {
-          where: {
-            deletedAt: null,
-          },
-        },
-      },
+      data: data,
     });
 
-    res.status(200).json(notebook);
+    res.status(200).json(updatedRecord);
   } catch (error) {
     handleError(error, res);
   }

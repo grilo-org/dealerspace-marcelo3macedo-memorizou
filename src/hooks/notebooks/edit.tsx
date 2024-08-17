@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 import { FormikHelpers } from "formik";
 
 import { useModalFeatures } from "../modals";

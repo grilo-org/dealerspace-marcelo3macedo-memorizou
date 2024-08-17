@@ -1,9 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import { useModalFeatures } from "../modals";
 
 const useActionsNotebook = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { setSelected } = useModalFeatures();
+
+  useEffect(() => {
+    setSelected("");
+  }, [setSelected]);
 
   const studyAction = async () => {
     console.log("TODO: study action");
@@ -14,12 +21,12 @@ const useActionsNotebook = () => {
   };
 
   const editAction = async () => {
-    console.log("TODO: edit action");
+    setSelected("edit-notebook");
     setShowMenu(false);
   };
 
   const removeAction = async () => {
-    console.log("TODO: remove action");
+    setSelected("remove-notebook");
     setShowMenu(false);
   };
 

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
-export interface MainProps {
+export interface ModalProps {
   readonly children: ReactNode;
+  readonly closeAction: any;
 }

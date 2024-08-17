@@ -9,29 +9,21 @@ export default async function handler(
 ) {
   const { id } = req.query;
 
-  try {
-    if (!id) {
-      throw new Error("Invalid request");
-    }
+  if (req.method !== "DELETE" || !id) {
+    return res.status(405).json({ error: "Invalid Request" });
+  }
 
-    const notebook = await prisma.notebook.findFirst({
+  try {
+    const deletedNotebook = await prisma.card.update({
       where: {
         id: id.toString(),
       },
-      select: {
-        id: true,
-        title: true,
-        content: true,
-        createdAt: true,
-        sections: {
-          where: {
-            deletedAt: null,
-          },
-        },
+      data: {
+        deletedAt: new Date(),
       },
     });
 
-    res.status(200).json(notebook);
+    res.status(200).json(deletedNotebook);
   } catch (error) {
     handleError(error, res);
   }

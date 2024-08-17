@@ -14,16 +14,18 @@ export default async function handler(
       throw new Error("Invalid request");
     }
 
-    const notebook = await prisma.notebook.findFirst({
+    const section = await prisma.section.findFirst({
       where: {
         id: id.toString(),
       },
       select: {
         id: true,
         title: true,
-        content: true,
+        description: true,
+        notebookId: true,
+        notebook: true,
         createdAt: true,
-        sections: {
+        cards: {
           where: {
             deletedAt: null,
           },
@@ -31,7 +33,7 @@ export default async function handler(
       },
     });
 
-    res.status(200).json(notebook);
+    res.status(200).json(section);
   } catch (error) {
     handleError(error, res);
   }
