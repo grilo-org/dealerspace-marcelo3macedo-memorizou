@@ -11,9 +11,11 @@ model Notebook {
   id        String   @id @default(uuid())
   title     String
   content   String
+  sections  Section[]
+  userId    String
+  user      User @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   deletedAt DateTime? @db.Timestamp(6)
-  sections  Section[]
 
   @@index([deletedAt])
 }
@@ -45,9 +47,28 @@ model Card {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   email     String   @unique
   password  String
+  details   UserDetails?
   createdAt DateTime @default(now())
+  notebooks Notebook[]
+
+  @@index([id])
+}
+
+model UserDetails {
+  id              String   @id @default(uuid())
+  userId          String
+  user            User @relation(fields: [userId], references: [id])
+  points          Int  @default(0)
+  daysStrike      Int  @default(0)
+  notebookStudied Int  @default(0)
+  cardsViewed     Int  @default(0)
+  createdAt       DateTime @default(now())
+  deletedAt       DateTime? @db.Timestamp(6)
+
+  @@index([userId])
+  @@unique([userId])
 }

@@ -6,6 +6,8 @@ const useUser = create(
     (set) => ({
       token: "",
       setToken: (token: string) => set({ token }),
+      infos: null,
+      setInfos: (infos: any) => set({ infos }),
     }),
     {
       name: "store-user",
