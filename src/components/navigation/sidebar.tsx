@@ -13,7 +13,7 @@ export default function SidebarNavigation() {
   const { items } = useHeaderNavigation();
 
   return (
-    <aside className="flex flex-col w-80 h-screen px-5 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l bg-gray-900 border-gray-700">
+    <aside className="hidden sm:flex flex-col w-80 h-screen px-5 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l bg-gray-900 border-gray-700">
       <Link href="/">
         <Image className="w-auto h-14" src={logo} alt="" />
       </Link>

@@ -9,7 +9,7 @@ export default function UserInfoForm({ infos }: { infos: any }) {
   if (!infos) return <></>;
 
   return (
-    <div className="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-1 max-w-2xl">
+    <div className="grid grid-cols-1 gap-6 mt-8 max-w-2xl">
       <div>
         <h4 className="text-gray-700">{t("name")}</h4>
         <input
