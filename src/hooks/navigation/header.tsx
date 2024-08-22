@@ -13,7 +13,7 @@ const useHeaderNavigation = () => {
     {
       Icon: FolderPlusIcon,
       label: "Meus cadernos",
-      link: "/notebooks/create",
+      link: "/user/notebooks",
     },
     {
       Icon: PhotoIcon,

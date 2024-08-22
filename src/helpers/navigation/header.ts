@@ -4,11 +4,11 @@ function hasMenuSelected(menuSelected: string) {
 
 function menuIconHandler(menuSelected: string, callback: Function) {
   if (hasMenuSelected(menuSelected)) {
-    callback('');
+    callback("");
     return;
   }
 
-  callback('menu');
+  callback("menu");
 }
 
 export { menuIconHandler, hasMenuSelected };

@@ -28,7 +28,8 @@ export default async function handler(
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+    const secret = process.env.JWT_SECRET || "";
+    const token = jwt.sign({ userId: user.id }, secret, {
       expiresIn: "1h",
     });
 

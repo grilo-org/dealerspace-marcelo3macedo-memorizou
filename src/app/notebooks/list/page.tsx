@@ -25,7 +25,7 @@ export default function ListNotebookPage({
         <Title>{t("title")}</Title>
         <MultilineText>{t("description")}</MultilineText>
       </div>
-      <NotebooksGallery data={data} />
+      <NotebooksGallery data={data} isPublic={true} />
     </MainTheme>
   );
 }

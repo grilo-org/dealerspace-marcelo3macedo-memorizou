@@ -1,9 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { MultilineTextProps } from './props/multilineText';
+import React from "react";
+
+import PropTypes from "prop-types";
+
+import { MultilineTextProps } from "./props/multilineText";
 
 const MultilineText = ({ children }: MultilineTextProps) => {
-  const lines = children.split('|');
+  const lines = children.split("|");
 
   return (
     <div>

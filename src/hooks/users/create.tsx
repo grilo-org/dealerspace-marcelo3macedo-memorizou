@@ -2,8 +2,8 @@
 import { FormikHelpers } from "formik";
 import { useRouter } from "next/navigation";
 
-import { create, signIn } from "@/api/users";
-import { NewUser, User } from "@/interfaces/user";
+import { create } from "@/api/users";
+import { NewUser } from "@/interfaces/user";
 
 const useCreateUser = () => {
   const router = useRouter();

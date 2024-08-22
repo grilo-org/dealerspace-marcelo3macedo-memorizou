@@ -1,11 +1,14 @@
+"use client";
 import { BoltIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import dog from "@/assets/images/profiles/dog.jpg";
+import { useInfosUser } from "@/hooks/users/infos";
 
 export default function InfosHelper() {
   const t = useTranslations("header");
+  const { infos } = useInfosUser();
 
   return (
     <div>
@@ -23,12 +26,12 @@ export default function InfosHelper() {
         </div>
         <div className="px-2 text-left">
           <h4 className="text-xs text-white">{t("hello")},</h4>
-          <h2 className="text-md font-bold text-white">{"name"}</h2>
+          <h2 className="text-md font-bold text-white">{infos?.name}</h2>
 
           <div className="flex items-center">
             <BoltIcon className="w-4 h-4 text-yellow-100" />
             <h2 className="text-sm mx-1 text-white">
-              {"points"} {t("points")}
+              {infos?.details?.points} {t("points")}
             </h2>
           </div>
         </div>
@@ -36,15 +39,21 @@ export default function InfosHelper() {
       <div className="flex justify-around py-2 mb-8">
         <div>
           <h4 className="text-xs text-white">{t("menu.daysStrike")}</h4>
-          <h4 className="mt-2 text-2xl text-white">0</h4>
+          <h4 className="mt-2 text-2xl text-white">
+            {infos?.details?.daysStrike}
+          </h4>
         </div>
         <div>
           <h4 className="text-xs text-white">{t("menu.studies")}</h4>
-          <h4 className="mt-2 text-2xl text-white">0</h4>
+          <h4 className="mt-2 text-2xl text-white">
+            {infos?.details?.notebookStudied}
+          </h4>
         </div>
         <div>
           <h4 className="text-xs text-white">{t("menu.cardsViewed")}</h4>
-          <h4 className="mt-2 text-2xl text-white">0</h4>
+          <h4 className="mt-2 text-2xl text-white">
+            {infos?.details?.cardsViewed}
+          </h4>
         </div>
       </div>
     </div>

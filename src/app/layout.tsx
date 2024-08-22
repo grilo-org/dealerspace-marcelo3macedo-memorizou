@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
 import { AR_One_Sans } from "next/font/google";
-import "./globals.css";
-import messages from '../../messages/pt.json';
 import { NextIntlClientProvider } from "next-intl";
+
+import messages from "../../messages/pt.json";
+
+import type { Metadata } from "next";
+
+import "./globals.css";
 
 const ar_one_sans = AR_One_Sans({ subsets: ["latin"] });
 
