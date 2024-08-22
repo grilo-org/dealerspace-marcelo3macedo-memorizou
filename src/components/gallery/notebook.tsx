@@ -6,13 +6,18 @@ import { getDistanceToDate } from "@/utils/dateParser";
 
 export default function NotebookContent({
   notebook,
+  isPublic,
 }: {
   readonly notebook: Notebook;
+  readonly isPublic: Boolean;
 }) {
   const t = useTranslations("notebooks");
+  const url = isPublic
+    ? `/notebooks/index/${notebook.id}`
+    : `/user/notebooks/index/${notebook.id}`;
 
   return (
-    <Link href={`/notebooks/index/${notebook.id}`}>
+    <Link href={url}>
       <div className="w-full px-8 py-4 bg-white rounded-lg shadow-md">
         <p className="text-xl font-bold text-gray-700 hover:text-gray-600 hover:underline">
           {notebook.title}

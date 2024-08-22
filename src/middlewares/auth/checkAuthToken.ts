@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken";
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { NextApiResponse } from "next";
 
 import { ExtendedNextApiRequest } from "@/interfaces/requests";
+import { UserJwt } from "@/interfaces/user";
 
 export type ExtendedNextApiHandler<T = any> = (
   req: ExtendedNextApiRequest,
@@ -18,8 +19,8 @@ const checkAuthToken = (handler: ExtendedNextApiHandler) => {
 
     try {
       //const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      const decoded = jwt.decode(token);
-      req.user = decoded;
+      const { userId } = jwt.decode(token) as UserJwt;
+      req.user = { userId };
       return handler(req, res);
     } catch (error) {
       return res.status(401).json({ message: "Invalid or expired token" });

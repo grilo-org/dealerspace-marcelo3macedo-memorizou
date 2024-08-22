@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from "querystring";
+
 import { ParsedParams } from "./props/fetch";
 
 export function parseQueryParams(query: ParsedUrlQuery): ParsedParams {

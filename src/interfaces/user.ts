@@ -1,3 +1,7 @@
+export interface UserJwt {
+  userId: string;
+}
+
 export interface User {
   email: string;
   password: string;

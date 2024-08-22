@@ -7,7 +7,7 @@ import type { NextApiResponse } from "next";
 
 const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   try {
-    const id = Number(req.user?.userId) || 0;
+    const id = req.user?.userId || "";
 
     const user = await prisma.user.findUnique({
       where: { id },

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
-export interface PageTitleProps {
+export interface ButtonActionProps {
   children: ReactNode;
+  onclick: any;
 }

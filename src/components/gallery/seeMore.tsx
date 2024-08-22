@@ -1,8 +1,9 @@
 "use client";
-import { SeeMoreProps } from "@/interfaces/gallery";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+
+import { SeeMoreProps } from "@/interfaces/gallery";
 
 export function SeeMoreGallery({ page }: Readonly<SeeMoreProps>) {
   const t = useTranslations("gallery");
