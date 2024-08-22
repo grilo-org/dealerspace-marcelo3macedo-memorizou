@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Memorizou
 
-## Getting Started
+This project was developed based on spaced repetition theory. Spaced repetition is an evidence-based learning technique that is usually performed with flashcards. 
+Newly introduced and more difficult flashcards are shown more frequently, while older and less difficult flashcards are shown less frequently in order to exploit the psychological spacing effect. The use of spaced repetition has been proven to increase rate of learning.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Code Techs
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Techniques Used
 
-## Learn More
+- **Latest Version of Next.js**: The project is built using the most recent version of Next.js, ensuring access to the latest features and improvements.
 
-To learn more about Next.js, take a look at the following resources:
+- **Internationalization**: The application supports multiple languages, making it accessible to a broader audience through Next.js's built-in internationalization support.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Software Quality Principles**: The project follows key principles of software quality, ensuring robust and maintainable code.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **ESLint Standardization**: Code quality and consistency are maintained through ESLint, which enforces coding standards and style guidelines.
 
-## Deploy on Vercel
+- **Inheritance for Session Types**: Different session types are created using the concept of inheritance, which helps in organizing and managing various content types effectively.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js API Functionality**: The application leverages Next.js API routes to handle server-side logic and data fetching.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **SSR and Client-Side Pages**: Pages are rendered using Server-Side Rendering (SSR) or client-side rendering based on the specific needs of each page, optimizing performance and user experience.
+
+- **Clean Architecture Separation**: The project is structured with clean architecture principles, separating concerns and enhancing maintainability.
+
+- **SonarQube Rules Compliance**: The code adheres to SonarQube rules, ensuring high code quality and reliability.
+
+Feel free to explore and contribute to this project!
