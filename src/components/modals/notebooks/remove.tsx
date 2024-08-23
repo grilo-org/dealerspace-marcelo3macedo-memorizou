@@ -4,11 +4,13 @@ import { useTranslations } from "next-intl";
 import BaseModal from "../base";
 
 import { useModalFeatures } from "@/hooks/modals";
+import { useRemoveNotebook } from "@/hooks/notebooks/remove";
 
 export default function RemoveNotebookModal() {
   const t = useTranslations("notebooks.modal.remove");
   const t_actions = useTranslations("notebooks.actions");
   const { selected, setSelected } = useModalFeatures();
+  const { onRemove } = useRemoveNotebook();
 
   if (selected !== "remove-notebook") return <></>;
 
@@ -38,8 +40,13 @@ export default function RemoveNotebookModal() {
           {t_actions("cancel")}
         </button>
 
-        <button className="px-14 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-          {t_actions("save")}
+        <button
+          onClick={() => {
+            onRemove();
+          }}
+          className="px-14 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+        >
+          {t_actions("remove")}
         </button>
       </div>
     </BaseModal>

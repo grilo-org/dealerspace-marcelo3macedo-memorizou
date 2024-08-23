@@ -7,6 +7,8 @@ import ButtonAction from "@/components/common/buttonAction";
 import MultilineText from "@/components/common/multilineText";
 import Title from "@/components/common/title";
 import NotebooksGallery from "@/components/gallery/notebooks";
+import NotebookModals from "@/components/modals/notebooks/main";
+import { useModalFeatures } from "@/hooks/modals";
 import { useNotebooksUser } from "@/hooks/users/notebooks";
 import MainTheme from "@/themes/main.theme";
 import { parseQueryParams } from "@/utils/fetch";
@@ -20,6 +22,7 @@ export default function UserNotebookPage({
   const t_actions = useTranslations("forms.actions");
   const { page: pageNum, limit: limitNum } = parseQueryParams(searchParams);
   const { notebooks } = useNotebooksUser(pageNum, limitNum);
+  const { setSelected } = useModalFeatures();
 
   return (
     <MainTheme>
@@ -30,13 +33,14 @@ export default function UserNotebookPage({
       <div className="my-4">
         <ButtonAction
           onclick={() => {
-            console.log("here");
+            setSelected("new-notebook");
           }}
         >
-          Adicionar novo cardeno
+          {t_actions("add")}
         </ButtonAction>
       </div>
       <NotebooksGallery data={notebooks} isPublic={false} />
+      <NotebookModals />
     </MainTheme>
   );
 }

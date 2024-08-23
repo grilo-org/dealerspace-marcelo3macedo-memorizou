@@ -103,6 +103,9 @@
         "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
         "createdWhen": "criado",
         "modal": {
+            "new": {
+                "title": "Criar Caderno"
+            },
             "edit": {
                 "title": "Editar Caderno"
             },

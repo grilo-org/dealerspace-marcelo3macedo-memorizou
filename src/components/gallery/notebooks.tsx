@@ -11,6 +11,8 @@ export default function NotebooksGallery({
   readonly data: NotebookResponse;
   readonly isPublic: Boolean;
 }) {
+  if (!data) return <></>;
+
   const hasMorePage = checkHasMorePages(data.page, data.limit, data.total);
 
   return (
