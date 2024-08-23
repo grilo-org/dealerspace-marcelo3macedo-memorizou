@@ -9,7 +9,7 @@ export default function MoreActions() {
     useActionsNotebook();
 
   return (
-    <div className="relative inline-block ">
+    <div className="relative inline-block px-4">
       <button
         onClick={() => {
           setShowMenu(!showMenu);
