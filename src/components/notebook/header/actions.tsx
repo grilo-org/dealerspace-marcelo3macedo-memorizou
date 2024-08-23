@@ -23,15 +23,6 @@ export default function Actions() {
             <PlayCircleIcon className="w-6 h-6 text-white" />
           </div>
         </button>
-        <button
-          className="hover:opacity-80 hover:cursor-pointer"
-          onClick={shareAction}
-        >
-          <div className="flex items-center justify-center rounded-xl px-4 my-2 mx-4">
-            <ShareIcon className="w-6 h-6 text-indigo-400" />
-            <p className="mx-3 text-indigo-400 font-bold">{t("share")}</p>
-          </div>
-        </button>
         <MoreActions />
       </div>
       <NotebookModals />

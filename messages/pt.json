@@ -35,12 +35,20 @@
             "content": "Conteúdo",
             "contentPlaceholder": "Informe uma descrição ao cartão"
         },
+        "userInfo": {
+            "name": "Nome",
+            "namePlaceholder": "Informe o seu nome",
+            "email": "E-mail",
+            "emailPlaceholder": "Informe o seu e-mail",
+            "createdAt": "Criado há"
+        },
         "actions": {
             "save": "Salvar",
             "cancel": "Cancelar",
             "add": "Adicionar",
             "login": "Login",
-            "create": "Criar"
+            "create": "Criar",
+            "exit": "Sair"
         }
     },
     "privacyPolicy": {
@@ -84,6 +92,10 @@
         "contactUs": {
             "title": "Contate-nos",
             "description": "Entre com contato conosco para críticas, melhorias e elogios."
+        },
+        "user": {
+            "title": "Minha Conta",
+            "description": "Informações, e-mail, segurança e mais sobre sua conta"
         }
     },
     "notebooks": {
@@ -91,6 +103,9 @@
         "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
         "createdWhen": "criado",
         "modal": {
+            "new": {
+                "title": "Criar Caderno"
+            },
             "edit": {
                 "title": "Editar Caderno"
             },
@@ -131,6 +146,8 @@
         }
     },
     "user": {
+        "title": "Minha conta",
+        "description": "Informações, e-mail, segurança e mais sobre sua conta",
         "notebooks": {
             "title": "Meus cadernos",
             "description": "Listagem de seus cadernos salvos ou criados."

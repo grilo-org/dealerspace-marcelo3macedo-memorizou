@@ -55,3 +55,14 @@ export async function update(data: EditNotebook) {
   }
   return response.json();
 }
+
+export async function remove(id: string) {
+  const response = await fetch(`${apiUrl}/api/notebooks/delete/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to post data");
+  }
+  return response.json();
+}

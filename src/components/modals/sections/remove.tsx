@@ -10,7 +10,7 @@ export default function RemoveSectionModal() {
   const t_actions = useTranslations("notebooks.actions");
   const { selected, setSelected } = useModalFeatures();
 
-  if (selected !== "remove-notebook") return <></>;
+  if (selected !== "remove-sections") return <></>;
 
   const closeAction = () => {
     setSelected("");

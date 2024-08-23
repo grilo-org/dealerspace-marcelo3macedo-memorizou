@@ -19,6 +19,7 @@ const useEditNotebook = () => {
     id: "",
     title: "",
     content: "",
+    userId: "",
   };
 
   if (editing) {
@@ -32,9 +33,12 @@ const useEditNotebook = () => {
     { setSubmitting, resetForm }: FormikHelpers<EditNotebook>,
   ) => {
     const newNotebook = await update(values);
-    setEditing(newNotebook);
+    editing.title = newNotebook.title;
+    editing.content = newNotebook.content;
 
+    setEditing(editing);
     setSubmitting(false);
+
     resetForm();
     setSelected("");
   };

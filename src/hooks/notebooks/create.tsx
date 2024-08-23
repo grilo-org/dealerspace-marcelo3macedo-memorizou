@@ -10,6 +10,7 @@ const useCreateNotebook = () => {
   const initialValues = {
     title: "",
     content: "",
+    userId: "",
   };
 
   const onSubmit = async (
@@ -17,7 +18,7 @@ const useCreateNotebook = () => {
     { setSubmitting, resetForm }: FormikHelpers<NewNotebook>,
   ) => {
     const { id } = await create(values);
-    router.push(`/notebooks/index/${id}`);
+    router.push(`/user/notebooks/index/${id}`);
     setSubmitting(false);
     resetForm();
   };

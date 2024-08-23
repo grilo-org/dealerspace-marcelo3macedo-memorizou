@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { useModalFeatures } from "@/hooks/modals";
 import { useEditNotebook } from "@/hooks/notebooks/edit";
+import { useInfosUser } from "@/hooks/users/infos";
 import { editNotebookSchema } from "@/schemas/notebooks";
 import { validate } from "@/utils/formValidate";
 
@@ -12,6 +13,11 @@ export default function EditNotebookForm() {
   const t_actions = useTranslations("notebooks.actions");
   const { setSelected } = useModalFeatures();
   const { initialValues, onSubmit } = useEditNotebook();
+  const { infos } = useInfosUser();
+
+  if (infos && infos.id) {
+    initialValues.userId = infos.id;
+  }
 
   const closeAction = () => {
     setSelected("");

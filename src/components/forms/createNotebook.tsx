@@ -3,6 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useTranslations } from "next-intl";
 
 import { useCreateNotebook } from "@/hooks/notebooks/create";
+import { useInfosUser } from "@/hooks/users/infos";
 import { createNotebookSchema } from "@/schemas/notebooks";
 import { validate } from "@/utils/formValidate";
 
@@ -10,9 +11,14 @@ export default function CreateNotebookForm() {
   const t = useTranslations("forms.notebook");
   const t_actions = useTranslations("forms.actions");
   const { initialValues, onSubmit } = useCreateNotebook();
+  const { infos } = useInfosUser();
+
+  if (infos && infos.id) {
+    initialValues.userId = infos.id;
+  }
 
   return (
-    <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
+    <section className="p-2">
       <h2 className="text-lg font-semibold text-gray-700 capitalize">
         {t("header")}
       </h2>
@@ -25,6 +31,7 @@ export default function CreateNotebookForm() {
       >
         <Form>
           <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
+            <Field type="hidden" name="userId" />
             <div>
               <h4 className="text-gray-700">{t("title")}</h4>
               <Field

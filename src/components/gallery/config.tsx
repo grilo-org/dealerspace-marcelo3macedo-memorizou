@@ -23,9 +23,7 @@ export default function ConfigContent({
 
       <h2 className="mt-2 font-bold">{t(label)}</h2>
 
-      <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-        {t(description)}
-      </p>
+      <p className="text-sm sm:mt-1 sm:text-gray-600">{t(description)}</p>
     </Link>
   );
 }

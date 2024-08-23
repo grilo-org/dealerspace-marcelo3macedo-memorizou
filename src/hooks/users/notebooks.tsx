@@ -16,10 +16,8 @@ const useNotebooksUser = (pageNum: number, limitNum: number) => {
       setNotebooks(data);
     };
 
-    if (!notebooks) {
-      fetch();
-    }
-  }, [notebooks, pageNum, limitNum, setNotebooks]);
+    fetch();
+  }, [pageNum, limitNum, setNotebooks]);
 
   return {
     notebooks,

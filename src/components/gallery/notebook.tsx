@@ -27,9 +27,6 @@ export default function NotebookContent({
           <span className="text-sm font-light text-gray-600">
             {t("createdWhen")} {getDistanceToDate(notebook.createdAt)}
           </span>
-          <p className="px-3 py-1 text-xs font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-            Categoria
-          </p>
         </div>
       </div>
     </Link>

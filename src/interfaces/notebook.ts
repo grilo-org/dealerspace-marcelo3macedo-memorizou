@@ -3,18 +3,21 @@ import { Section } from "./section";
 export interface NewNotebook {
   title: string;
   content: string;
+  userId: string;
 }
 
 export interface EditNotebook {
   id: string;
   title: string;
   content: string;
+  userId: string;
 }
 
 export interface Notebook {
   id: string;
   title: string;
   content: string;
+  userId: string;
   createdAt: string;
   sections: Section[];
 }
