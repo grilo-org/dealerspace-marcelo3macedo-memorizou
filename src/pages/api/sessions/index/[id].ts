@@ -14,7 +14,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
       throw new Error("Invalid request");
     }
 
-    const session = await prisma.userSession.findMany({
+    const session = await prisma.userSession.findFirst({
       where: {
         id: id.toString(),
         userId,

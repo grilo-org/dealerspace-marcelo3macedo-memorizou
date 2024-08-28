@@ -1,7 +1,5 @@
 "use client";
-import { use, useEffect } from "react";
-
-import { BackwardIcon } from "@heroicons/react/24/solid";
+import { useEffect } from "react";
 
 import { index } from "@/api/sections";
 import CardsGallery from "@/components/gallery/cards";
