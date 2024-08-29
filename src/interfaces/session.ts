@@ -27,3 +27,13 @@ export interface SessionCard {
 export type SessionIndexProps = {
   params: { id: string };
 };
+
+export interface UpdateSessionCard {
+  id: string;
+  difficultyId: string;
+  answerAt: string;
+}
+
+export interface UpdateSession {
+  cards: UpdateSessionCard[];
+}

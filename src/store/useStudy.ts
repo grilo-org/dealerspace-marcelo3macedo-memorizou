@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import { Option } from "@/interfaces/option";
+
 const useStudy = create(
   persist(
     (set) => ({
@@ -10,6 +12,8 @@ const useStudy = create(
       setIndex: (index: number) => set({ index }),
       responses: [],
       setResponses: (responses: string[]) => set({ responses }),
+      options: [],
+      setOptions: (options: Option[]) => set({ options }),
     }),
     {
       name: "store-study",

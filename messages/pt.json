@@ -163,6 +163,12 @@
             "action": {
                 "backHome": "Voltar para página inicial"
             }
-        }        
+        },
+        "options": {
+            "easy": "Fácil",
+            "medium": "Médio",
+            "hard": "Difícil",
+            "dont_remember": "Não lembro"
+        }
     }
 }

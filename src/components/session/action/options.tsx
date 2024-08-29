@@ -1,7 +1,10 @@
+import { useTranslations } from "next-intl";
+
 import { useStudySession } from "@/hooks/sessions/study";
 import { Option } from "@/interfaces/option";
 
 export default function OptionsAction() {
+  const t = useTranslations("session.options");
   const { options, selectOption } = useStudySession();
 
   return (
@@ -14,7 +17,7 @@ export default function OptionsAction() {
               selectOption(o.id);
             }}
           >
-            {o.name}
+            {t(o.name)}
           </button>
         </div>
       ))}

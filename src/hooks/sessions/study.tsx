@@ -1,5 +1,6 @@
 import { useRouter } from "next/navigation";
 
+import { update } from "@/api/session";
 import { Card } from "@/interfaces/card";
 import useSession from "@/store/useSession";
 import useStudy from "@/store/useStudy";
@@ -10,35 +11,16 @@ const useStudySession = () => {
     session: state.session,
   }));
 
-  const { flip, setFlip, index, setIndex, responses, setResponses } = useStudy(
-    (state: any) => ({
+  const { options, flip, setFlip, index, setIndex, responses, setResponses } =
+    useStudy((state: any) => ({
+      options: state.options,
       index: state.index,
       setIndex: state.setIndex,
       flip: state.flip,
       setFlip: state.setFlip,
       responses: state.responses,
       setResponses: state.setResponses,
-    }),
-  );
-
-  const options = [
-    {
-      id: "1",
-      name: "Fácil",
-    },
-    {
-      id: "2",
-      name: "Médio",
-    },
-    {
-      id: "3",
-      name: "Difícil",
-    },
-    {
-      id: "4",
-      name: "Muito Difícil",
-    },
-  ];
+    }));
 
   const changeFlip = () => {
     setFlip(!flip);
@@ -60,7 +42,18 @@ const useStudySession = () => {
     setIndex(index + 1);
   };
 
-  const finishStudy = () => {
+  const finishStudy = async () => {
+    const updateSession = {
+      cards: responses.map((response: any, index: number) => {
+        return {
+          id: session.sessionCards[index].card.id,
+          difficultyId: response.id,
+          answerAt: response.timestamp,
+        };
+      }),
+    };
+
+    await update(session.id, updateSession);
     router.push(`/user/sessions/completed`);
   };
 

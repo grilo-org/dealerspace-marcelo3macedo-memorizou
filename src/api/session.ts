@@ -1,4 +1,4 @@
-import { NewSession } from "@/interfaces/session";
+import { NewSession, UpdateSession } from "@/interfaces/session";
 import useUser from "@/store/useUser";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -36,6 +36,26 @@ export async function index(id: string) {
   });
   if (!response.ok) {
     throw new Error("Failed to fetch data");
+  }
+  return response.json();
+}
+
+export async function update(id: string, data: UpdateSession) {
+  const { token } = useUser.getState() as { token: string };
+
+  if (!token) return;
+
+  const response = await fetch(`${apiUrl}/api/sessions/edit/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to post data");
   }
   return response.json();
 }
