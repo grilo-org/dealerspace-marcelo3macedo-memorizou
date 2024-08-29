@@ -15,11 +15,6 @@ const useHeaderNavigation = () => {
       label: "Meus cadernos",
       link: "/user/notebooks",
     },
-    {
-      Icon: PhotoIcon,
-      label: "Galeria Pública",
-      link: "/notebooks/list",
-    },
   ] as ItemSidebarProps[];
   const notebooks = [
     {

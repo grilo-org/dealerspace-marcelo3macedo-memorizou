@@ -1,12 +1,12 @@
-import createNextIntlPlugin from 'next-intl/plugin';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { promises as fs } from "fs";
+import createNextIntlPlugin from "next-intl/plugin";
+import path from "path";
 
 const withNextIntl = createNextIntlPlugin();
 
 async function getRewrites() {
-  const rewritesPath = path.join(process.cwd(), 'rewrites.json');
-  const data = await fs.readFile(rewritesPath, 'utf-8');
+  const rewritesPath = path.join(process.cwd(), "rewrites.json");
+  const data = await fs.readFile(rewritesPath, "utf-8");
   return JSON.parse(data);
 }
 

@@ -48,7 +48,9 @@
             "add": "Adicionar",
             "login": "Login",
             "create": "Criar",
-            "exit": "Sair"
+            "exit": "Sair",
+            "back": "Voltar",
+            "reveal": "Revelar"
         }
     },
     "privacyPolicy": {
@@ -151,6 +153,22 @@
         "notebooks": {
             "title": "Meus cadernos",
             "description": "Listagem de seus cadernos salvos ou criados."
+        }
+    },
+    "session": {
+        "title": "Nome da Sessão",
+        "cards": "Cartões",
+        "completed": {
+            "congrats": "Parabéns, você completou essa seção!",
+            "action": {
+                "backHome": "Voltar para página inicial"
+            }
+        },
+        "options": {
+            "easy": "Fácil",
+            "medium": "Médio",
+            "hard": "Difícil",
+            "dont_remember": "Não lembro"
         }
     }
 }

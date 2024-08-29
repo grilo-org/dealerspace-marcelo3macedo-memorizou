@@ -66,3 +66,13 @@ export async function remove(id: string) {
   }
   return response.json();
 }
+
+export async function getCards(notebookId: string, limit: number) {
+  const response = await fetch(
+    `${apiUrl}/api/notebooks/getCards?notebookId=${notebookId}&limit=${limit}`,
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return response.json();
+}

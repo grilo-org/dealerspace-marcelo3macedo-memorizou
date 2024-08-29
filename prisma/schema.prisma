@@ -14,6 +14,7 @@ model Notebook {
   sections  Section[]
   userId    String
   user      User @relation(fields: [userId], references: [id])
+  sessions  UserSession[]
   createdAt DateTime @default(now())
   deletedAt DateTime? @db.Timestamp(6)
 
@@ -34,14 +35,15 @@ model Section {
 }
 
 model Card {
-  id          String   @id @default(uuid())
-  title       String
-  content     String
-  extra       String?
-  sectionId   String
-  section     Section @relation(fields: [sectionId], references: [id])
-  createdAt   DateTime @default(now())
-  deletedAt   DateTime? @db.Timestamp(6)
+  id            String   @id @default(uuid())
+  title         String
+  content       String
+  extra         String?
+  sectionId     String
+  section       Section @relation(fields: [sectionId], references: [id])
+  sessionCards  UserSessionCard[]
+  createdAt     DateTime @default(now())
+  deletedAt     DateTime? @db.Timestamp(6)
 
   @@index([sectionId])
 }
@@ -54,6 +56,7 @@ model User {
   details   UserDetails?
   createdAt DateTime @default(now())
   notebooks Notebook[]
+  sessions  UserSession[]
 
   @@index([id])
 }
@@ -71,4 +74,48 @@ model UserDetails {
 
   @@index([userId])
   @@unique([userId])
+}
+
+model UserSession {
+  id              String            @id @default(uuid())
+  userId          String
+  notebookId      String
+  createdAt       DateTime          @default(now())
+  deletedAt       DateTime?         @db.Timestamp(6)
+
+  user            User              @relation(fields: [userId], references: [id])
+  notebook        Notebook          @relation(fields: [notebookId], references: [id])
+  sessionCards    UserSessionCard[]
+
+  @@index([userId])
+  @@index([notebookId])
+}
+
+model UserSessionCard {
+  id              String         @id @default(uuid())
+  sessionId       String
+  cardId          String
+  difficultyId    String?
+  createdAt       DateTime       @default(now())
+  answerAt        DateTime?      @db.Timestamp(6)
+  deletedAt       DateTime?      @db.Timestamp(6)
+  
+  session         UserSession    @relation(fields: [sessionId], references: [id])
+  card            Card           @relation(fields: [cardId], references: [id])
+  difficulty      Difficulty?    @relation(fields: [difficultyId], references: [id])
+
+  @@index([sessionId])
+  @@index([cardId])
+  @@index([difficultyId])
+}
+
+model Difficulty {
+  id              String        @id @default(uuid())
+  name            String
+  order           Int           @default(0)
+  createdAt       DateTime      @default(now())
+  deletedAt       DateTime?     @db.Timestamp(6)
+  sessionCards    UserSessionCard[]
+
+  @@index([id])
 }

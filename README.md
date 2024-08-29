@@ -36,3 +36,8 @@ Newly introduced and more difficult flashcards are shown more frequently, while 
 - **SonarQube Rules Compliance**: The code adheres to SonarQube rules, ensuring high code quality and reliability.
 
 Feel free to explore and contribute to this project!
+
+PRISMA
+npx prisma migrate dev --name <migration-name>
+npx prisma migrate deploy
+npx prisma generate

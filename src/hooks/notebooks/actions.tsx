@@ -2,10 +2,20 @@
 
 import { useEffect, useState } from "react";
 
+import { useRouter } from "next/navigation";
+
 import { useModalFeatures } from "../modals";
 
+import { create } from "@/api/session";
+import { mountSessionCard } from "@/helpers/sessions/generate";
+import useNotebook from "@/store/useNotebook";
+
 const useActionsNotebook = () => {
+  const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+  const { editing } = useNotebook((state: any) => ({
+    editing: state.editing,
+  }));
   const { setSelected } = useModalFeatures();
 
   useEffect(() => {
@@ -13,7 +23,10 @@ const useActionsNotebook = () => {
   }, [setSelected]);
 
   const studyAction = async () => {
-    console.log("TODO: study action");
+    const { id } = editing || {};
+    const sessionCard = await mountSessionCard(id);
+    const sessionCardCreated = await create(sessionCard);
+    router.push(`/user/sessions/index/${sessionCardCreated.id}`);
   };
 
   const shareAction = async () => {

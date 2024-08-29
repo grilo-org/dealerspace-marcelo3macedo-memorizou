@@ -9,7 +9,7 @@ import { useActionsNotebook } from "@/hooks/notebooks/actions";
 
 export default function Actions() {
   const t = useTranslations("notebooks.actions");
-  const { shareAction, studyAction } = useActionsNotebook();
+  const { studyAction } = useActionsNotebook();
 
   return (
     <div>
