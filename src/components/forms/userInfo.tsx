@@ -6,7 +6,18 @@ import { getDistanceToDate } from "@/utils/dateParser";
 export default function UserInfoForm({ infos }: { infos: any }) {
   const t = useTranslations("forms.userInfo");
   const t_actions = useTranslations("forms.actions");
-  if (!infos) return <></>;
+
+  if (!infos)
+    return (
+      <div>
+        <Link
+          href={"/login/signIn"}
+          className="inline-block shrink-0 rounded-md border text-md border-blue-600 bg-blue-600 px-20 py-3 font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+        >
+          {t_actions("login")}
+        </Link>
+      </div>
+    );
 
   return (
     <div className="grid grid-cols-1 gap-6 mt-8 max-w-2xl">
