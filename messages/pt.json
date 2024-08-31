@@ -1,18 +1,27 @@
 {
     "signIn": {
         "title": "Bem-vindo ao Memorizou",
-        "description": "Memorizou é a solução perfeita para estudantes que buscam uma maneira eficiente de aprender."
+        "description": "Memorizou é a solução perfeita para estudantes que buscam uma maneira eficiente de aprender.",
+        "notHaveAnAccount": "Não possui uma conta? Cadastre-já!",
+        "alreadyHaveAnAccount": "Já possui uma conta? Faça o login!"
     },
     "forms": {
         "signIn": {
             "email": "E-mail",
-            "password": "Senha"
+            "password": "Senha",
+            "emailRequired": "Informe o seu e-mail",
+            "passwordRequired": "Informe a sua senha"
         },
         "signUp": {
             "name": "Nome",
             "email": "E-mail",
             "password": "Senha",
-            "confirmPassword": "Confirme sua Senha"
+            "confirmPassword": "Confirme sua Senha",
+            "nameRequired": "Informe o seu nome",
+            "emailRequired": "Informe o seu e-mail",
+            "passwordRequired": "Informe a sua senha",
+            "confirmPasswordRequired": "Informe a sua senha",
+            "passwordMismatch": "As senhas não coincidem"
         },
         "notebook": {
             "header": "Novo Caderno",
@@ -169,6 +178,13 @@
             "medium": "Médio",
             "hard": "Difícil",
             "dont_remember": "Não lembro"
+        }
+    },
+    "notification": {
+        "type": {
+            "error": "Erro",
+            "invalidEmailOrPassword": "Usuário ou senha inválidos",
+            "userAlreadyExists": "Usuário já existe"
         }
     }
 }
