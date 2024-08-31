@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+import { AUTH_INVALID_EMAIL_OR_PASSWORD } from "@/lib/constants/auth";
 import prisma from "@/lib/prisma";
 import { signInUserSchema } from "@/schemas/users";
 import { handleError } from "@/utils/errorHandler";
@@ -18,14 +19,14 @@ export default async function handler(
     const user = await prisma.user.findUnique({ where: { email } });
 
     if (!user) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: AUTH_INVALID_EMAIL_OR_PASSWORD });
     }
 
     const saltedPassword = password + passwordSecret;
     const isValidPassword = await bcrypt.compare(saltedPassword, user.password);
 
     if (!isValidPassword) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: AUTH_INVALID_EMAIL_OR_PASSWORD });
     }
 
     const secret = process.env.JWT_SECRET || "";

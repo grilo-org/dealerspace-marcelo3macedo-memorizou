@@ -17,7 +17,7 @@ export default async function handler(
     const existingUser = await prisma.user.findUnique({ where: { email } });
 
     if (existingUser) {
-      return res.status(409).json({ message: "User already exists" });
+      return res.status(409).json({ message: "userAlreadyExists" });
     }
 
     const saltedPassword = password + passwordSecret;
@@ -31,7 +31,7 @@ export default async function handler(
       },
     });
 
-    res.status(201).json({ message: "User created successfully" });
+    res.status(201).json({ message: "userCreatedSuccessfully" });
   } catch (error) {
     handleError(error, res);
   }

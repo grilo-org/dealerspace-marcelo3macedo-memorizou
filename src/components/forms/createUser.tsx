@@ -3,13 +3,15 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useTranslations } from "next-intl";
 
 import { useCreateUser } from "@/hooks/users/create";
-import { signUpUserSchema } from "@/schemas/users";
+import { signUpUserComponentSchema } from "@/schemas/users";
 import { validate } from "@/utils/formValidate";
 
 export default function CreateUserForm() {
   const t = useTranslations("forms.signUp");
   const t_actions = useTranslations("forms.actions");
   const { initialValues, onSubmit } = useCreateUser();
+
+  const signUpUserSchema = signUpUserComponentSchema(t);
 
   return (
     <Formik
@@ -78,7 +80,7 @@ export default function CreateUserForm() {
 
         <div className="flex justify-end mt-6">
           <button
-            className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+            className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-24 py-3 my-4 text-sm font-medium text-white transition hover:bg-blue-400 focus:outline-none focus:ring active:text-blue-500"
             type="submit"
           >
             {t_actions("create")}

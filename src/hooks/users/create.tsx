@@ -2,10 +2,14 @@
 import { FormikHelpers } from "formik";
 import { useRouter } from "next/navigation";
 
+import { useMessageNotification } from "../notification/message";
+
 import { create } from "@/api/users";
 import { NewUser } from "@/interfaces/user";
+import { NOTIFICATION_ERROR } from "@/lib/constants/notification";
 
 const useCreateUser = () => {
+  const { alertHandler } = useMessageNotification();
   const router = useRouter();
   const initialValues = {
     name: "",
@@ -17,10 +21,14 @@ const useCreateUser = () => {
     values: NewUser,
     { setSubmitting, resetForm }: FormikHelpers<NewUser>,
   ) => {
-    await create(values);
-    router.push("/login/signIn");
-    setSubmitting(false);
-    resetForm();
+    try {
+      await create(values);
+      router.push("/login/signIn");
+      setSubmitting(false);
+      resetForm();
+    } catch (e: any) {
+      alertHandler(NOTIFICATION_ERROR, e.message);
+    }
   };
 
   return {

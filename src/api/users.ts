@@ -1,36 +1,17 @@
+import { handlePostRequest } from "@/helpers/requests/handle";
 import { NewUser, User } from "@/interfaces/user";
 import useUser from "@/store/useUser";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export async function signIn(data: User) {
-  const response = await fetch(`${apiUrl}/api/users/signIn`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to post data");
-  }
-  return response.json();
+  const endpoint = "/api/users/signIn";
+  return handlePostRequest(endpoint, data, false);
 }
 
 export async function create(data: NewUser) {
-  const response = await fetch(`${apiUrl}/api/users/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to post data");
-  }
-  return response.json();
+  const endpoint = "/api/users/create";
+  return handlePostRequest(endpoint, data, false);
 }
 
 export async function index() {

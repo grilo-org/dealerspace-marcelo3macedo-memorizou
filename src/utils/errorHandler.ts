@@ -1,3 +1,4 @@
+"use client";
 import { ZodError } from "zod";
 
 import type { NextApiResponse } from "next";
