@@ -8,11 +8,11 @@ import { ButtonActionProps } from "./props/buttonAction";
 const ButtonAction = ({ children, onclick }: ButtonActionProps) => {
   return (
     <button
-      className="hover:opacity-80 hover:cursor-pointer my-2 border-slate-200 border-2 py-2 px-4 focus:outline-none focus:bg-slate-50 focus:ring-2 rounded-md"
+      className="inline-block shrink-0 rounded-md border text-md border-blue-600 bg-blue-600 px-8 py-3 font-medium text-white transition hover:text-blue-100 focus:outline-none focus:ring active:text-blue-500"
       onClick={onclick}
     >
       <div className="flex justify-center items-center">
-        <PlusCircleIcon className="w-10 h-10 text-orange-400 mr-2" />
+        <PlusCircleIcon className="w-10 h-10 text-white mr-2" />
         <p>{children}</p>
       </div>
     </button>

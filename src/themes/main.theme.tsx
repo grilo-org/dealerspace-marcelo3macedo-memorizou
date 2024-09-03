@@ -7,9 +7,11 @@ function MainTheme({ children }: Readonly<MainProps>) {
   return (
     <div className="w-full bg-yellow-50">
       <SidebarMobileNavigation />
-      <div className="mx-auto flex">
+      <div className="mx-auto flex overflow-hidden">
         <SidebarNavigation />
-        <main className="min-h-screen px-4 w-full">{children}</main>
+        <main className="min-h-screen lg:px-4 w-full max-h-lvh overflow-y-scroll">
+          {children}
+        </main>
       </div>
     </div>
   );

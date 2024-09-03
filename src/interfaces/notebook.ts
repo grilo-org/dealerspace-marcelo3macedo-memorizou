@@ -13,6 +13,10 @@ export interface EditNotebook {
   userId: string;
 }
 
+export interface CloneNotebook {
+  id: string;
+}
+
 export interface Notebook {
   id: string;
   title: string;
