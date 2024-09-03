@@ -192,5 +192,25 @@
         "actions": {
             "doLogin": "Fazer login"
         }
+    },
+    "hero": {
+        "createYourFlashcards": {
+            "title": "Transforme seus estudos com flashcards!",
+            "description": "Crie, compartilhe e aprenda com nossos flashcards personalizados. Explore um mundo de conhecimento com o Memorizou.",
+            "actions": {
+                "enter": "Entrar",
+                "signUp": "Cadastre-se gratuitamente"
+            }
+        },
+        "createYourAccount": {
+            "actions": {
+                "signUp": "Cadastre-se e tenha acesso ilimitado aos melhores flashcards.",
+                "alreadyHaveAccount": "Já tem uma conta? Entre aqui e continue seus estudos!"
+            }
+        },
+        "samples": {
+            "title": "Explore nossa galeria",
+            "description": "Explore nossa galeria de flashcards e veja o que você pode aprender."
+        }
     }
 }
