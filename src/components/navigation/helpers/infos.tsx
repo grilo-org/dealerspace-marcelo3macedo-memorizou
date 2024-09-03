@@ -3,12 +3,19 @@ import { BoltIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
+import InfosDetailsHelper from "./infos-details";
+import InfosLoginHelper from "./infos-login";
+
 import dog from "@/assets/images/profiles/dog.jpg";
 import { useInfosUser } from "@/hooks/users/infos";
 
 export default function InfosHelper() {
   const t = useTranslations("header");
   const { infos } = useInfosUser();
+
+  if (!infos) {
+    return <InfosLoginHelper />;
+  }
 
   return (
     <div>
@@ -36,26 +43,7 @@ export default function InfosHelper() {
           </div>
         </div>
       </button>
-      <div className="flex justify-around py-2 mb-8">
-        <div>
-          <h4 className="text-xs text-white">{t("menu.daysStrike")}</h4>
-          <h4 className="mt-2 text-2xl text-white">
-            {infos?.details?.daysStrike}
-          </h4>
-        </div>
-        <div>
-          <h4 className="text-xs text-white">{t("menu.studies")}</h4>
-          <h4 className="mt-2 text-2xl text-white">
-            {infos?.details?.notebookStudied}
-          </h4>
-        </div>
-        <div>
-          <h4 className="text-xs text-white">{t("menu.cardsViewed")}</h4>
-          <h4 className="mt-2 text-2xl text-white">
-            {infos?.details?.cardsViewed}
-          </h4>
-        </div>
-      </div>
+      <InfosDetailsHelper details={infos?.details} />
     </div>
   );
 }

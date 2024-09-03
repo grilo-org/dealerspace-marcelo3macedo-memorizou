@@ -1,4 +1,9 @@
-import { EditNotebook, NewNotebook } from "@/interfaces/notebook";
+import { handlePostRequest } from "@/helpers/requests/handle";
+import {
+  CloneNotebook,
+  EditNotebook,
+  NewNotebook,
+} from "@/interfaces/notebook";
 import useUser from "@/store/useUser";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -39,6 +44,11 @@ export async function create(data: NewNotebook) {
     throw new Error("Failed to post data");
   }
   return response.json();
+}
+
+export async function clone(data: CloneNotebook) {
+  const endpoint = `api/notebooks/clone`;
+  return handlePostRequest(endpoint, data, true);
 }
 
 export async function update(data: EditNotebook) {

@@ -4,6 +4,22 @@ import useUser from "@/store/useUser";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+const handleGetRequest = async (
+  endpoint: string,
+  isAuthNeeded: boolean = false,
+) => {
+  const response = await fetch(`${apiUrl}/${endpoint}`, {
+    method: "GET",
+    headers: getHeaders(isAuthNeeded),
+  });
+
+  if (!response.ok) {
+    const data = await extractErrorMessage(response);
+    throw new Error(data);
+  }
+  return response.json();
+};
+
 const handlePostRequest = async (
   endpoint: string,
   data: any,
@@ -37,4 +53,4 @@ const getHeaders = (isAuthNeeded: boolean): HeadersInit => {
   };
 };
 
-export { handlePostRequest };
+export { handleGetRequest, handlePostRequest };

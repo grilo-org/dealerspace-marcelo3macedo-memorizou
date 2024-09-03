@@ -137,6 +137,7 @@
     "sections": {
         "title": "Seções",
         "addNew": "Adicionar nova seção",
+        "clone": "Clonar",
         "availableCards": "cartões disponíveis",
         "modal": {
             "new": {
@@ -185,6 +186,11 @@
             "error": "Erro",
             "invalidEmailOrPassword": "Usuário ou senha inválidos",
             "userAlreadyExists": "Usuário já existe"
+        }
+    },
+    "menu": {
+        "actions": {
+            "doLogin": "Fazer login"
         }
     }
 }
