@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { ParsedUrlQuery } from "querystring";
 
 import { list } from "@/api/notebooks";
+import BreadcrumbComponent from "@/components/common/breadcrumb";
 import MultilineText from "@/components/common/multilineText";
 import Title from "@/components/common/title";
 import NotebooksGallery from "@/components/gallery/notebooks";
@@ -21,7 +22,8 @@ export default function ListNotebookPage({
 
   return (
     <MainTheme>
-      <div className="container my-4 md:my-8 mx-auto">
+      <BreadcrumbComponent pageName={t("title")} />
+      <div className="container my-4 md:my-8 mx-auto px-4">
         <Title>{t("title")}</Title>
         <MultilineText>{t("description")}</MultilineText>
       </div>

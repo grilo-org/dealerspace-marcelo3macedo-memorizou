@@ -10,7 +10,7 @@ const MultilineText = ({ children }: MultilineTextProps) => {
   return (
     <div>
       {lines.map((line) => (
-        <p key={line} className="text-md md:text-lg py-1">
+        <p key={line} className="text-md md:text-md py-1">
           {line}
         </p>
       ))}

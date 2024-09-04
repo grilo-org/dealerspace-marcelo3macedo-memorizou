@@ -2,7 +2,6 @@ import NotebookContent from "./notebook";
 import { SeeMoreGallery } from "./seeMore";
 
 import { NotebookResponse } from "@/interfaces/notebook";
-import { checkHasMorePages } from "@/utils/paginate";
 
 export default function NotebooksGallery({
   data,
@@ -12,8 +11,6 @@ export default function NotebooksGallery({
   readonly isPublic: Boolean;
 }) {
   if (!data) return <></>;
-
-  const hasMorePage = checkHasMorePages(data.page, data.limit, data.total);
 
   return (
     <article>
@@ -26,7 +23,7 @@ export default function NotebooksGallery({
           />
         ))}
       </div>
-      {hasMorePage ? <SeeMoreGallery page={data.page} /> : <></>}
+      <SeeMoreGallery page={data.page} total={data.total} limit={data.limit} />
     </article>
   );
 }
