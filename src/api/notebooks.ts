@@ -1,4 +1,6 @@
-import { handlePostRequest } from "@/helpers/requests/handle";
+import { notebooks } from "./users";
+
+import { handleGetRequest, handlePostRequest } from "@/helpers/requests/handle";
 import {
   CloneNotebook,
   EditNotebook,
@@ -17,13 +19,8 @@ export async function index(id: string) {
 }
 
 export async function list(page: number, limit: number) {
-  const response = await fetch(
-    `${apiUrl}/api/notebooks?page=${page}&limit=${limit}`,
-  );
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return response.json();
+  const endpoint = `api/notebooks?page=${page}&limit=${limit}`;
+  return handleGetRequest(endpoint);
 }
 
 export async function create(data: NewNotebook) {

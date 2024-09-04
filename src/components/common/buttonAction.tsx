@@ -8,7 +8,7 @@ import { ButtonActionProps } from "./props/buttonAction";
 const ButtonAction = ({ children, onclick }: ButtonActionProps) => {
   return (
     <button
-      className="inline-block shrink-0 rounded-md border text-md border-blue-600 bg-blue-600 px-8 py-3 font-medium text-white transition hover:text-blue-100 focus:outline-none focus:ring active:text-blue-500"
+      className="inline-block shrink-0 rounded-md border text-md border-slate-900 bg-slate-900 px-8 py-3 font-medium text-white transition hover:text-blue-100 focus:outline-none focus:ring active:text-blue-500"
       onClick={onclick}
     >
       <div className="flex justify-center items-center">

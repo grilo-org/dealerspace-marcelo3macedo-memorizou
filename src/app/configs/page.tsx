@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import BreadcrumbComponent from "@/components/common/breadcrumb";
 import MultilineText from "@/components/common/multilineText";
 import Title from "@/components/common/title";
 import ConfigContent from "@/components/gallery/config";
@@ -12,7 +13,9 @@ export default function ConfigsPage() {
 
   return (
     <MainTheme>
-      <div className="container my-4 md:my-8 mx-auto">
+      <BreadcrumbComponent pageName={t("title")} />
+
+      <div className="container px-4">
         <Title>{t("title")}</Title>
         <MultilineText>{t("description")}</MultilineText>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">

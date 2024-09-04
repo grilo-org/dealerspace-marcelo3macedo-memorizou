@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import BreadcrumbComponent from "@/components/common/breadcrumb";
 import MultilineText from "@/components/common/multilineText";
 import Title from "@/components/common/title";
 import FacebookIcon from "@/components/icons/facebook";
@@ -13,7 +14,8 @@ export default function ContactUsPage() {
 
   return (
     <MainTheme>
-      <div className="container my-4 md:my-8 mx-auto px-2">
+      <BreadcrumbComponent pageName={t("title")} />
+      <div className="container my-4 md:my-8 mx-auto px-4">
         <Title>{t("title")}</Title>
         <MultilineText>{t("description")}</MultilineText>
         <h2 className="text-md py-2 mt-2 md:text-lg">{t("social.title")}</h2>
