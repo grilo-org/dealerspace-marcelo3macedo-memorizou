@@ -25,14 +25,6 @@ export default function SamplesHero() {
               height={500}
               className="-ml-4 -mt-6 h-80 w-full rounded-bl-3xl rounded-tr-3xl border border-gray-200 object-cover"
             />
-
-            <div className="p-4 text-center">
-              <strong className="text-xl font-medium text-gray-700">
-                {i.title}
-              </strong>
-
-              <p className="mt-2 text-pretty text-gray-700">{i.description}</p>
-            </div>
           </div>
         ))}
       </div>
