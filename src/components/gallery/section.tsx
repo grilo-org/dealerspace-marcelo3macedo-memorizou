@@ -15,7 +15,7 @@ export default function SectionContent({
   const { removeAction } = useRemoveSection();
 
   return (
-    <div className="p-4 border-b-slate-100 border-b-2 flex items-center justify-between">
+    <div className="p-4 flex items-center justify-between">
       <div>
         <p className="text-slate-800">{section.title}</p>
         <p className="text-sm py-1 text-slate-800">

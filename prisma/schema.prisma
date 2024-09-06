@@ -8,15 +8,17 @@ generator client {
 }
 
 model Notebook {
-  id        String   @id @default(uuid())
-  title     String
-  content   String
-  sections  Section[]
-  userId    String
-  user      User @relation(fields: [userId], references: [id])
-  sessions  UserSession[]
-  createdAt DateTime @default(now())
-  deletedAt DateTime? @db.Timestamp(6)
+  id         String   @id @default(uuid())
+  title      String
+  content    String
+  sections   Section[]
+  userId     String
+  user       User @relation(fields: [userId], references: [id])
+  subthemeId String?
+  subtheme   Subtheme? @relation(fields: [subthemeId], references: [id])
+  sessions   UserSession[]
+  createdAt  DateTime @default(now())
+  deletedAt  DateTime? @db.Timestamp(6)
 
   @@index([deletedAt])
 }
@@ -116,6 +118,32 @@ model Difficulty {
   createdAt       DateTime      @default(now())
   deletedAt       DateTime?     @db.Timestamp(6)
   sessionCards    UserSessionCard[]
+
+  @@index([id])
+}
+
+model Theme {
+  id              String        @id @default(uuid())
+  name            String
+  order           Int           @default(0)
+  createdAt       DateTime      @default(now())
+  deletedAt       DateTime?     @db.Timestamp(6)
+
+  subthemes       Subtheme[]
+
+  @@index([id])
+}
+
+model Subtheme {
+  id              String        @id @default(uuid())
+  name            String
+  order           Int           @default(0)
+  themeId         String
+  createdAt       DateTime      @default(now())
+  deletedAt       DateTime?     @db.Timestamp(6)
+
+  theme           Theme @relation(fields: [themeId], references: [id])
+  notebooks       Notebook[]
 
   @@index([id])
 }

@@ -13,15 +13,15 @@ export default function NewSectionContent() {
 
   return (
     <button
-      className="hover:opacity-80 hover:cursor-pointer w-full"
+      className="hover:opacity-80 hover:cursor-pointer overflow-hidden"
       onClick={openModal}
     >
-      <div className="p-4 border-b-slate-100 border-t-2 mt-2 flex items-center hover:bg-slate-50">
+      <div className="px-8 py-2 flex items-center bg-gray-400 rounded-xl mt-8">
         <div>
-          <PlusCircleIcon className="w-10 h-10 text-orange-300" />
+          <PlusCircleIcon className="w-6 h-6 text-white" />
         </div>
         <div className="flex px-4">
-          <p className="text-slate-800">{t("addNew")}</p>
+          <p className="text-white font-bold text-sm">{t("addNew")}</p>
         </div>
       </div>
     </button>

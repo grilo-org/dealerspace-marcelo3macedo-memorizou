@@ -36,3 +36,7 @@ export interface NotebookResponse {
 export type NotebookIndexProps = {
   params: { id: string };
 };
+
+export type NotebookByNameProps = {
+  params: { name: string };
+};

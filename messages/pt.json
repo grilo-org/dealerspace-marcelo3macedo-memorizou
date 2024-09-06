@@ -88,7 +88,7 @@
         },
         "helpfulLinks": {
             "title": "Links úteis",
-            "notebooks": "Sobre nós",
+            "notebooks": "Cadernos",
             "list": "Galeria"
         }
     },
@@ -232,5 +232,12 @@
         "seeMore": "Ver mais",
         "previous": "Anterior",
         "next": "Próximo"
+    },
+    "notFound": {
+        "title": "Não encontrado",
+        "description": "A página que você encontrou não existe. Aqui estão links úteis:",
+        "actions": {
+            "goHome": "Ir para Página Inicial"
+        }
     }
 }
