@@ -17,15 +17,17 @@ export default function SamplesHero() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 mx-6">
         {items.map((i) => (
-          <div key={i.id}>
-            <Image
-              src={i.imageUrl}
-              alt=""
-              width={400}
-              height={500}
-              className="-ml-4 -mt-6 h-80 w-full rounded-bl-3xl rounded-tr-3xl border border-gray-200 object-cover"
-            />
-          </div>
+          <Link key={i.id} href={`/notebooks/byName/${i.title}`}>
+            <div>
+              <Image
+                src={i.imageUrl}
+                alt=""
+                width={400}
+                height={500}
+                className="-ml-4 -mt-6 h-80 w-full rounded-bl-3xl rounded-tr-3xl border border-gray-200 object-cover"
+              />
+            </div>
+          </Link>
         ))}
       </div>
       <div className="w-full text-center">

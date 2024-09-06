@@ -18,6 +18,11 @@ export async function index(id: string) {
   return response.json();
 }
 
+export async function getByName(name: string) {
+  const endpoint = `api/notebooks/search?name=${name}`;
+  return handleGetRequest(endpoint);
+}
+
 export async function list(page: number, limit: number) {
   const endpoint = `api/notebooks?page=${page}&limit=${limit}`;
   return handleGetRequest(endpoint);
