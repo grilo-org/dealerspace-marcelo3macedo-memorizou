@@ -12,14 +12,14 @@ export default function SectionsGallery({ sections }: { sections: any }) {
   if (!sections) return <></>;
 
   return (
-    <div>
-      <div className="bg-slate-300 p-4 rounded-t-lg border-b-slate-400 border-2">
-        <p className="text-slate-800 font-bold">
+    <div className="p-4">
+      <div className="bg-slate-500 p-4 rounded-t-lg">
+        <p className="text-white font-bold">
           {t("title")} ({sections.length})
         </p>
       </div>
       <div>
-        <div className="max-h-96 overflow-y-scroll">
+        <div className="max-h-96 overflow-y-scroll bg-white border-slate-100 border-2 rounded-b-xl">
           {sections.map((s: Section) => (
             <SectionContent key={s.id} section={s} />
           ))}
