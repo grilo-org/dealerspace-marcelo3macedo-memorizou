@@ -23,7 +23,7 @@ export default function CardsGallery() {
       </div>
       <div>
         <NewCardContent sectionId={editing.id} />
-        <div className="max-h-96 overflow-y-scroll">
+        <div className="max-h-96 md:overflow-y-scroll">
           {editing.cards
             .sort(
               (a: Card, b: Card) =>

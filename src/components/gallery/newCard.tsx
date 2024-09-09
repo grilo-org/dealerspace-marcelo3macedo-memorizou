@@ -24,7 +24,7 @@ export default function NewCardContent({ sectionId }: { sectionId: string }) {
       <Form>
         <Field type="hidden" name="sectionId" />
         <div className="flex items-center justify-between max-w-full">
-          <div className="flex items-start justify-between border-slate-100 rounded-lg border-2 my-2 w-full">
+          <div className="md:flex items-start justify-between border-slate-100 rounded-lg border-2 my-2 w-full">
             <div className="w-full p-4">
               <p className="font-bold text-slate-300">{t_cards("front")}</p>
               <Field

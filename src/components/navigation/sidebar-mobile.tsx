@@ -33,7 +33,7 @@ export default function SidebarMobileNavigation() {
         )}
       </button>
       {visible ? (
-        <aside className="fixed sm:hidden flex-col w-full h-screen px-5 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l bg-gray-900 border-gray-700">
+        <aside className="fixed z-20 sm:hidden flex-col w-full h-screen px-5 py-8 overflow-y-auto border-r rtl:border-r-0 rtl:border-l bg-gray-900 border-gray-700">
           <Link href="/">
             <Image className="w-auto h-14" src={logo} alt="" />
           </Link>
