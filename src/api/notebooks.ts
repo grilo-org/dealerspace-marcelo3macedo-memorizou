@@ -23,8 +23,8 @@ export async function getByName(name: string) {
   return handleGetRequest(endpoint);
 }
 
-export async function list(page: number, limit: number) {
-  const endpoint = `api/notebooks?page=${page}&limit=${limit}`;
+export async function list(page: number, limit: number, theme: string) {
+  const endpoint = `api/notebooks?page=${page}&limit=${limit}&theme=${theme}`;
   return handleGetRequest(endpoint);
 }
 

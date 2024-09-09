@@ -127,6 +127,7 @@
         "title": "Cadernos disponíveis",
         "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
         "createdWhen": "criado",
+        "themes": "Temas",
         "modal": {
             "new": {
                 "title": "Criar Caderno"
@@ -145,7 +146,9 @@
             "edit": "Editar",
             "remove": "Remover",
             "save": "Salvar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "filter": "Filtrar",
+            "select": "Selecione"
         }
     },
     "sections": {

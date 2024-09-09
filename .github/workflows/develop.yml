@@ -29,7 +29,8 @@ jobs:
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env.production
           echo "PASSWORD_SECRET=${{ secrets.PASSWORD_SECRET }}" >> .env.production
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env.production
-
+          echo "MASTER_USER_ID=${{ secrets.MASTER_USER_ID }}" >> .env.production
+          
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:

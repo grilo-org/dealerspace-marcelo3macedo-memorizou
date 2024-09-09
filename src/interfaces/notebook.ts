@@ -1,4 +1,6 @@
 import { Section } from "./section";
+import { Subtheme } from "./subtheme";
+import { Theme } from "./theme";
 
 export interface NewNotebook {
   title: string;
@@ -24,10 +26,12 @@ export interface Notebook {
   userId: string;
   createdAt: string;
   sections: Section[];
+  subtheme: Subtheme;
 }
 
 export interface NotebookResponse {
   notebooks: Notebook[];
+  themes: Theme[];
   page: number;
   limit: number;
   total: number;
