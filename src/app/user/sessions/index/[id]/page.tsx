@@ -15,7 +15,7 @@ export default function IndexSessionPage({
 
   return (
     <SessionTheme>
-      <div className="flex">
+      <div className="md:flex">
         <SessionSidebarNavigation session={session} />
         <div className="px-4 w-full">
           <SessionCard />

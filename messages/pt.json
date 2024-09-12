@@ -185,6 +185,13 @@
     "session": {
         "title": "Nome da Sessão",
         "cards": "Cartões",
+        "next": "Sua resposta irá auxiliar o memorizou para criar suas futuras sessões. Ao selecionar uma resposta você será redirecionado a próxima pergunta",
+        "active": {
+            "tip": "Antes de visualizar a resposta, recomendamos analisar a pergunta por alguns segundos.",
+            "action": {
+                "reveal": "Clique para ver a resposta"
+            }
+        },
         "completed": {
             "congrats": "Parabéns, você completou essa seção!",
             "action": {
