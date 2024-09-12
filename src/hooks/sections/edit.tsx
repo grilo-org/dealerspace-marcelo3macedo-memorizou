@@ -16,7 +16,7 @@ const useEditSection = () => {
   };
 
   const backAction = async () => {
-    router.push(`/notebooks/index/${editing.notebookId}`);
+    router.push(`/user/notebooks/index/${editing.notebookId}`);
   };
 
   return {

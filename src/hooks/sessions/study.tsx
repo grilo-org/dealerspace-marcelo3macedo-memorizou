@@ -57,6 +57,10 @@ const useStudySession = () => {
     router.push(`/user/sessions/completed`);
   };
 
+  const backStudy = async () => {
+    router.push(`/user/notebooks/index/${session.notebookId}`);
+  };
+
   const getCard = (): Card => {
     return session.sessionCards[index]
       ? session.sessionCards[index].card
@@ -70,6 +74,7 @@ const useStudySession = () => {
     changeFlip,
     selectOption,
     getCard,
+    backStudy,
   };
 };
 

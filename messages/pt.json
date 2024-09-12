@@ -249,5 +249,8 @@
         "actions": {
             "goHome": "Ir para Página Inicial"
         }
+    },
+    "loading": {
+        "message": "Carregando..."
     }
 }

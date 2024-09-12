@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { list } from "@/api/difficulty";
 import { index } from "@/api/session";
@@ -7,6 +7,7 @@ import useSession from "@/store/useSession";
 import useStudy from "@/store/useStudy";
 
 const useIndexSession = (id: string) => {
+  const [loading, setLoading] = useState(false);
   const { session, setSession } = useSession((state: any) => ({
     session: state.session,
     setSession: state.setSession,
@@ -26,6 +27,7 @@ const useIndexSession = (id: string) => {
       setFlip(false);
       setIndex(0);
       setResponses([]);
+      setLoading(true);
     };
 
     const fetch = async () => {
@@ -33,12 +35,13 @@ const useIndexSession = (id: string) => {
       const difficuties = await list();
       initSession(session);
       setOptions(difficuties);
+      setLoading(false);
     };
 
     fetch();
   }, [id, setSession, setFlip, setIndex, setResponses, setOptions]);
 
-  return { session };
+  return { session, loading };
 };
 
 export { useIndexSession };
