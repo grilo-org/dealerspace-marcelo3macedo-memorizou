@@ -1,4 +1,4 @@
-import { handlePostRequest } from "@/helpers/requests/handle";
+import { handleGetRequest, handlePostRequest } from "@/helpers/requests/handle";
 import { NewUser, User } from "@/interfaces/user";
 import useUser from "@/store/useUser";
 
@@ -34,23 +34,6 @@ export async function index() {
 }
 
 export async function notebooks(page: number, limit: number) {
-  const { token } = useUser.getState() as { token: string };
-
-  if (!token) return;
-
-  const response = await fetch(
-    `${apiUrl}/api/notebooks?page=${page}&limit=${limit}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    },
-  );
-
-  if (!response.ok) {
-    throw new Error("Failed to post data");
-  }
-  return response.json();
+  const endpoint = `api/users/notebooks/list?page=${page}&limit=${limit}`;
+  return handleGetRequest(endpoint, true);
 }

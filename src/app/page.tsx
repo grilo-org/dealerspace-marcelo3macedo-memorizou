@@ -1,4 +1,3 @@
-import { FooterPrimary } from "@/components/footer/primary";
 import CreateYourAccount from "@/components/heros/createYourAccount";
 import CreateYourFlashcardsHero from "@/components/heros/createYourFlashcards";
 import SamplesHero from "@/components/heros/samples";
@@ -12,7 +11,6 @@ export default function Home() {
         <SamplesHero />
         <CreateYourAccount />
       </div>
-      <FooterPrimary />
     </MainTheme>
   );
 }

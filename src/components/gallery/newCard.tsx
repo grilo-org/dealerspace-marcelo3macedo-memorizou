@@ -24,23 +24,23 @@ export default function NewCardContent({ sectionId }: { sectionId: string }) {
       <Form>
         <Field type="hidden" name="sectionId" />
         <div className="flex items-center justify-between max-w-full">
-          <div className="flex items-start justify-between border-slate-100 rounded-lg border-2 my-2 w-full">
+          <div className="bg-white md:flex items-start justify-between border-slate-100 rounded-lg border-2 my-2 w-full">
             <div className="w-full p-4">
-              <p className="font-bold text-slate-300">{t_cards("front")}</p>
+              <p className="font-bold text-slate-500">{t_cards("front")}</p>
               <Field
                 as="textarea"
                 name="title"
                 rows="4"
-                className="block w-full py-2 px-2 mt-2 text-gray-700 focus:outline-none"
+                className="block text-sm w-full py-2 px-2 mt-2 border-slate-100 border-2 text-gray-700 focus:outline-none"
               />
             </div>
             <div className="w-full p-4">
-              <p className="font-bold text-slate-300">{t_cards("back")}</p>
+              <p className="font-bold text-slate-500">{t_cards("back")}</p>
               <Field
                 as="textarea"
                 name="content"
                 rows="4"
-                className="block w-full py-2 px-2 mt-2 text-gray-700 focus:outline-none"
+                className="block text-sm w-full py-2 px-2 mt-2 border-slate-100 border-2 text-gray-700 focus:outline-none"
               />
             </div>
           </div>

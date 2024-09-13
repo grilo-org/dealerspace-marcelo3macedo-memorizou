@@ -1,4 +1,5 @@
 "use client";
+import LoadingBase from "@/components/loading/base";
 import SessionSidebarNavigation from "@/components/navigation/sessionSidebar";
 import SessionCard from "@/components/session/card";
 import { useIndexSession } from "@/hooks/sessions";
@@ -9,13 +10,13 @@ export default function IndexSessionPage({
   params,
 }: Readonly<SessionIndexProps>) {
   const { id } = params || {};
-  const { session } = useIndexSession(id);
+  const { session, loading } = useIndexSession(id);
 
-  if (!session) return <></>;
+  if (!session || loading) return <LoadingBase />;
 
   return (
     <SessionTheme>
-      <div className="flex">
+      <div className="md:flex">
         <SessionSidebarNavigation session={session} />
         <div className="px-4 w-full">
           <SessionCard />

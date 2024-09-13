@@ -17,7 +17,7 @@ export default function SectionsGallery({ sections }: { sections: any }) {
         </p>
       </div>
       <div>
-        <div className="max-h-96 overflow-y-scroll bg-white border-slate-100 border-2 rounded-b-xl">
+        <div className="max-h-96 md:overflow-y-scroll bg-white border-slate-100 border-2 rounded-b-xl">
           {sections.map((s: Section) => (
             <SectionContent key={s.id} section={s} />
           ))}

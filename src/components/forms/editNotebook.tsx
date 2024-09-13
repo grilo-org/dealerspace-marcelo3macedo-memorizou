@@ -64,7 +64,7 @@ export default function EditNotebookForm() {
 
             <button
               type="submit"
-              className="px-14 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              className="w-full px-14 py-2 mt-2 text-sm font-medium tracking-wide text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
               {t_actions("save")}
             </button>

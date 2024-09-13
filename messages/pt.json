@@ -127,6 +127,7 @@
         "title": "Cadernos disponíveis",
         "description": "Confira a nossa galeria de cadernos disponíveis para revisão, fique a vontade para baixá-los.",
         "createdWhen": "criado",
+        "themes": "Temas",
         "modal": {
             "new": {
                 "title": "Criar Caderno"
@@ -145,7 +146,9 @@
             "edit": "Editar",
             "remove": "Remover",
             "save": "Salvar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "filter": "Filtrar",
+            "select": "Selecione"
         }
     },
     "sections": {
@@ -182,6 +185,13 @@
     "session": {
         "title": "Nome da Sessão",
         "cards": "Cartões",
+        "next": "Sua resposta irá auxiliar o memorizou para criar suas futuras sessões. Ao selecionar uma resposta você será redirecionado a próxima pergunta",
+        "active": {
+            "tip": "Antes de visualizar a resposta, recomendamos analisar a pergunta por alguns segundos.",
+            "action": {
+                "reveal": "Clique para ver a resposta"
+            }
+        },
         "completed": {
             "congrats": "Parabéns, você completou essa seção!",
             "action": {
@@ -239,5 +249,8 @@
         "actions": {
             "goHome": "Ir para Página Inicial"
         }
+    },
+    "loading": {
+        "message": "Carregando..."
     }
 }

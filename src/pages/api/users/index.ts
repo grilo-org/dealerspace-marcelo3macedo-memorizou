@@ -8,6 +8,9 @@ import type { NextApiResponse } from "next";
 const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
   try {
     const id = req.user?.userId || "";
+    if (!id || typeof id !== "string") {
+      return res.status(400).json({ message: "invalidUser" });
+    }
 
     const user = await prisma.user.findUnique({
       where: { id },

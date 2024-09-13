@@ -7,5 +7,7 @@ export function parseQueryParams(query: ParsedUrlQuery): ParsedParams {
     typeof query.page === "string" ? parseInt(query.page, 10) || 1 : 1;
   const limit =
     typeof query.limit === "string" ? parseInt(query.limit, 10) || 10 : 10;
-  return { page, limit };
+  const theme = (query.theme || "").toString();
+
+  return { page, limit, theme };
 }

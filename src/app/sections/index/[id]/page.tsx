@@ -30,8 +30,10 @@ export default function IndexSectionsPage({
   return (
     <MainTheme>
       <Header />
-      <BackAction />
-      <CardsGallery />
+      <div className="px-4">
+        <BackAction />
+        <CardsGallery />
+      </div>
     </MainTheme>
   );
 }

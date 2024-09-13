@@ -31,8 +31,16 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
       },
     });
 
+    const themes = await prisma.theme.findMany({
+      distinct: ["name"],
+      select: {
+        name: true,
+      },
+    });
+
     res.status(200).json({
-      data: notebooks,
+      notebooks: notebooks,
+      themes: themes,
       total: totalNotebooks,
       page: pageNum,
       limit: limitNum,

@@ -13,14 +13,14 @@ export default function BaseModal({
         role="dialog"
         aria-modal="true"
       >
-        <div className="flex items-end justify-center min-h-screen text-center sm:block sm:p-0">
-          <div className="relative inline-block px-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-4">
-            <div className="flex items-end justify-end">
+        <div className="flex items-start pt-10 md:pt-0 px-8 md:px-0 md:items-end justify-center min-h-screen text-center sm:block sm:p-0">
+          <div className="relative inline-block px-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right sm:my-8 sm:align-middle w-full sm:max-w-2xl sm:w-full sm:p-4">
+            <div className="flex items-end justify-end py-4 md:py-0">
               <button onClick={closeAction}>
                 <XMarkIcon className="text-slate-600 w-6 h-6" />
               </button>
             </div>
-            <div>{children}</div>
+            <div className="pb-4 md:pb-0">{children}</div>
           </div>
         </div>
       </div>

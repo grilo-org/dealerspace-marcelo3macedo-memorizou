@@ -6,7 +6,7 @@ export default function SessionFinishedPage() {
   return (
     <SessionTheme>
       <div className="flex items-center justify-center min-h-screen">
-        <div className="bg-white rounded-md min-h-[400px] min-w-[400px] text-center">
+        <div className="bg-white rounded-md h-screen md:h-auto min-h-[400px] min-w-[400px] text-center">
           <CompletedHeader />
           <CompletedAction />
         </div>

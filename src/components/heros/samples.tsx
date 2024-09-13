@@ -17,7 +17,7 @@ export default function SamplesHero() {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 mx-6">
         {items.map((i) => (
-          <Link key={i.id} href={`/notebooks/byName/${i.title}`}>
+          <Link key={i.id} href={`/notebooks/list?theme=${i.title}`}>
             <div>
               <Image
                 src={i.imageUrl}
